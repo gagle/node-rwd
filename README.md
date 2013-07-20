@@ -14,7 +14,7 @@ Did you know why the people prefix `__dirname` before a path?
 
 ```javascript
 var fs = require ("fs");
-fs.existsSync (__dirname + "file");
+fs.existsSync (__dirname + "/file");
 ```
 
 It's because the `process.cwd()` function returns the shell's current working directory instead of the directory where lives the main script of your application.
