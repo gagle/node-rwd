@@ -7,6 +7,9 @@ _Node.js project_
 
 Version: 0.0.1
 
+_rwd_ means real working directory.  
+In global installed modules this module is not needed.
+
 Did you know why the people prefix `__dirname` before a path?
 
 ```javascript
@@ -30,7 +33,30 @@ $ node dir/app.js
 
 You probably expect the path `/home/user1/dir`. If you execute the main script with a relative path like the above example, very bad things could happen and nearly impossible to detect why your code is not working as expected.
 
+The following example illustrates a very ingenuous script, but depending on how you execute it very dangerous things will happen:
 
+```javascript
+//app.js
+var fs = require ("fs");
+if (fs.existsSync ("settings.json")){
+	doSomethingUseful ();
+}else{
+	//Warning!!
+	saveToDatabaseDefaultSettings ();
+}
+```
+
+```
+# Warning!! "settings.json" doesn't exist in "app".
+node app/app.js
+```
+
+In order to fix this issue simply require the `rwd` module. I recommend to put the require in the very first line of yout main script:
+
+```javascript
+//app.js
+require ("rwd");
+```
 
 #### Installation ####
 
@@ -38,3 +64,18 @@ You probably expect the path `/home/user1/dir`. If you execute the main script w
 npm install rwd
 ```
 
+#### Functions ####
+
+- [rwd() : String](#rwd)
+
+---
+
+<a name="rwd"></a>
+__rwd() : String__  
+Simply requiring the module the cwd will be fixed but you can also get at any time the relative path between the cwd and the rwd.
+
+```javascript
+var rel = require ("rwd")();
+```
+
+On global installed modules ir returns null.
