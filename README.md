@@ -8,7 +8,7 @@ _Node.js project_
 Version: 0.0.1
 
 _rwd_ means real working directory.  
-In global modules `rwd` is not needed.
+Global modules don't need the `rwd` module.
 
 Did you know why the people prefix `__dirname` before a path?
 
