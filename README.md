@@ -47,7 +47,7 @@ if (fs.existsSync ("settings.json")){
 ```
 
 ```
-# Warning!! "settings.json" doesn't exist in "app".
+# Warning!! "settings.json" doesn't exist in ".".
 node app/app.js
 ```
 
