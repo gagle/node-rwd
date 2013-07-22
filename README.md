@@ -51,7 +51,7 @@ if (fs.existsSync ("settings.json")){
 node app/app.js
 ```
 
-In order to fix this issue simply require the `rwd` module. I recommend to put the require in the very first line of yout main script:
+In order to fix this issue simply require the `rwd` module. I recommend to put the require in the very first line of your main script:
 
 ```javascript
 //app.js
