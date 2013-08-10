@@ -71,7 +71,8 @@ npm install rwd
 ---
 
 <a name="rwd"></a>
-__rwd() : String__  
+__rwd() : String__
+
 Simply requiring the module the cwd will be fixed but you can also get at any time the relative path between the cwd and the rwd.
 
 ```javascript
