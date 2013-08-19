@@ -79,4 +79,4 @@ Simply requiring the module the cwd will be fixed but you can also get at any ti
 var rel = require ("rwd")();
 ```
 
-On global installed modules ir returns null.
+On global installed modules it returns null.
