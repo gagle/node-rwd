@@ -5,7 +5,7 @@ _Node.js project_
 
 #### Changes the cwd to the real working directory ####
 
-Version: 0.0.1
+Version: 0.1.0
 
 _rwd_ means real working directory.  
 Global modules don't need the `rwd` module.
@@ -51,11 +51,11 @@ if (fs.existsSync ("settings.json")){
 node app/app.js
 ```
 
-In order to fix this issue simply require the `rwd` module. I recommend to put the require in the very first line of your main script:
+In order to fix this issue simply require the `rwd` module and execute the returned function. I recommend to put the require in the very first line of your main script:
 
 ```javascript
 //app.js
-require ("rwd");
+require ("rwd")();
 ```
 
 #### Installation ####
@@ -66,17 +66,24 @@ npm install rwd
 
 #### Functions ####
 
-- [rwd() : String](#rwd)
+- [rwd([obj]) : String](#rwd)
 
 ---
 
 <a name="rwd"></a>
-__rwd() : String__
+___module_([obj]) : String__
 
-Simply requiring the module the cwd will be fixed but you can also get at any time the relative path between the cwd and the rwd.
+The module returns a function that needs to be called in order the fix the cwd. If you pass an object with an `error` property set to true an error will be thrown when the cwd is not correct. Use this option if you don't like to change the cwd when the process is running. If no object is passed the cwd will be fixed automatically.
+
+```javascript
+//If the process is atarted with an incorrect relative path, ie. node dir/app.js it will throw an error
+require ("rwd")({ error: true });
+```
+
+You can also get at any time the relative path between the cwd and the rwd.
 
 ```javascript
 var rel = require ("rwd")();
 ```
 
-On global installed modules it returns null.
+On global installed modules the `rwd` module is no-op. It returns null.
