@@ -4,7 +4,7 @@ var assert = require ("assert");
 var fs = require ("fs");
 
 var file = "different-cwd.js";
-process.chdir ("../..");
+process.chdir ("..");
 
 //cwd != rwd
 /*
