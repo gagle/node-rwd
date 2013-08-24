@@ -66,12 +66,12 @@ npm install rwd
 
 #### Functions ####
 
-- [rwd([obj]) : String](#rwd)
+- [_module_([obj]) : String | null](#rwd)
 
 ---
 
 <a name="rwd"></a>
-___module_([obj]) : String__
+___module_([obj]) : String | null__
 
 The module returns a function that needs to be called in order the fix the cwd. If you pass an object with an `error` property set to true an error will be thrown when the cwd is not correct. Use this option if you don't like to change the cwd when the process is running. If no object is passed the cwd will be fixed automatically.
 
