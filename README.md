@@ -33,6 +33,8 @@ $ node dir/app.js
 
 You probably expect the path `/home/user1/dir`. If you execute the main script with a relative path like the above example, very bad things could happen and nearly impossible to detect why your code is not working as expected.
 
+`node dir/app` behaves different than `cd dir && node app`.
+
 The following example illustrates a very ingenuous script, but depending on how you execute it very dangerous things will happen:
 
 ```javascript
