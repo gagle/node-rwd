@@ -52,7 +52,7 @@ if (fs.existsSync ("settings.json")){
 
 ```
 # Warning!! "settings.json" doesn't exist in ".".
-node app/app.js
+node dir/app.js
 ```
 
 In order to fix this issue simply require the `rwd` module and execute the returned function. I recommend to put the require in the very first line of your main script:
