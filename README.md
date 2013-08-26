@@ -29,6 +29,8 @@ $ cat > dir/app.js
 console.log (process.cwd ());
 $ node dir/app.js
 /home/user1
+$ cd dir && node app.js
+/home/user1/dir
 ```
 
 You probably expect the path `/home/user1/dir`. If you execute the main script with a relative path like the above example, very bad things could happen and nearly impossible to detect why your code is not working as expected.
