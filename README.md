@@ -50,8 +50,9 @@ if (fs.existsSync ("settings.json")){
 }
 ```
 
+Warning! `settings.json` doesn't exist in `.`, it's stored in `./dir`.
+
 ```
-# Warning!! "settings.json" doesn't exist in ".".
 node dir/app.js
 ```
 
@@ -60,6 +61,24 @@ In order to fix this issue simply require the `rwd` module and execute the retur
 ```javascript
 //app.js
 require ("rwd")();
+```
+
+#### Alternatives ####
+
+If you prefer the ugly and archaic `__dirname` approach rather than using a warning or changing the cwd at runtime, you don't need to install any module. For your convenience you can create a global variable similar to `__dirname` which can be used safely from any module (`__dirname` is local to the file). For example, you can run this snippet in the main file:
+
+```javascript
+var path = require ("path");
+global.__root = path.dirname (process.mainModule.filename);
+```
+
+Then, every time you need to use a relative path from the project root, you can prefix it with `__root`:
+
+```javascript
+var fs = require ("fs");
+if (fs.existsSync (__root + "/settings.json")){
+	doSomethingUseful ();
+}
 ```
 
 #### Installation ####
@@ -80,7 +99,7 @@ ___module_([obj]) : String | null__
 The module returns a function that needs to be called in order the fix the cwd. If you pass an object with an `error` property set to true an error will be thrown when the cwd is not correct. Use this option if you don't like to change the cwd when the process is running. If no object is passed the cwd will be fixed automatically.
 
 ```javascript
-//If the process is atarted with an incorrect relative path, ie. node dir/app.js it will throw an error
+//If the process is started with an incorrect relative path, ie. node dir/app.js it will throw an error
 require ("rwd")({ error: true });
 ```
 
