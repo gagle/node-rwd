@@ -13,6 +13,7 @@ $ pwd
 <rwd_project_dir>
 $ node test/<file>
 */
+
 assert.ok (!fs.existsSync (file));
-require ("../lib")();
-assert.ok (fs.existsSync (file));
+require ("../lib");
+assert.fail ();
