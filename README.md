@@ -50,12 +50,14 @@ if (fs.existsSync ("settings.json")){
 }
 ```
 
-This can be easily fixed changing the cwd at runtime, but it's discouraged. The best way to ensure that the application is started correctly, simply require the `rwd`. I recommend to put the require in the very first line of your main file:
+This can be easily fixed changing the cwd at runtime, but it's discouraged. The best way to ensure that the application is started correctly, simply require the `rwd` module. I recommend to put the require in the very first line of your main file:
 
 ```javascript
 //app.js
 require ("rwd");
 ```
+
+The module is automatically uncached.
 
 Then, if you start the process with a relative path, eg: `$ node dir/app.js`, a message will be printed and the process will exit, something similar to this:
 
