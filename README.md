@@ -33,9 +33,9 @@ $ cd dir && node app.js
 /home/user1/dir
 ```
 
-If you execute the main script with a relative path like the above example (`$ node dir/app.js`), very bad things could happen and it's nearly impossible to detect why your code is not working as expected. This is a _feature_ found on all the programming languages because it's a thing related with the OS, not the programming language.
+If you execute the main script with a relative path like the above example (`$ node dir/app.js`), very bad things could happen and it's nearly impossible to detect why your code is not working as expected. This is a _feature_ found on all the programming languages because it's a thing related with the OS, not with the programming language itself.
 
-`node dir/app` behaves different than `cd dir && node app`.
+`$ node dir/app` behaves different than `$ cd dir && node app`.
 
 The following example illustrates a very ingenuous script, but depending on how you execute it, very dangerous things could happen:
 
@@ -50,14 +50,14 @@ if (fs.existsSync ("settings.json")){
 }
 ```
 
-This can be easily fixed changing the cwd at runtime, but it's discouraged. The best way to ensure that the application is started correctly, simply require the `rwd`. I recommend to put the require in the very first line of your main script:
+This can be easily fixed changing the cwd at runtime, but it's discouraged. The best way to ensure that the application is started correctly, simply require the `rwd`. I recommend to put the require in the very first line of your main file:
 
 ```javascript
 //app.js
 require ("rwd");
 ```
 
-Then, if you start the process with a relative path, eg: `node dir/app.js`, a message will be printed and the process will exit, something similar to this:
+Then, if you start the process with a relative path, eg: `$ node dir/app.js`, a message will be printed and the process will exit, something similar to this:
 
 ```
 The process has been started this way:
@@ -70,7 +70,7 @@ Better alternatives:
   $ node <absolute_path>/dir/app.js
 ```
 
-This way, you don't need to prefix the paths with `__dirname`.
+This way, you don't need to prefix the paths with `__dirname` because if the process doesn't exit it means that the cwd is the same as the directory of the main file.
 
 #### Installation ####
 
