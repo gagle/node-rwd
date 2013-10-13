@@ -72,7 +72,7 @@ Better alternatives:
   $ node <absolute_path>/dir/app.js
 ```
 
-This way, you don't need to prefix the paths with `__dirname` because if the process doesn't exit it means that the cwd is the same as the directory of the main file.
+This way, you don't need to prefix the paths with `__dirname` because if the process doesn't finish this means that the cwd is the same as the directory of the main file.
 
 #### Installation ####
 
