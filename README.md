@@ -33,7 +33,7 @@ $ cd dir && node app.js
 /home/user1/dir
 ```
 
-You probably expect the path `/home/user1/dir`. If you execute the main script with a relative path like the above example, very bad things could happen and it's nearly impossible to detect why your code is not working as expected.
+If you execute the main script with a relative path like the above example (`$ node dir/app.js`), very bad things could happen and it's nearly impossible to detect why your code is not working as expected. This is a _feature_ found on all the programming languages because it's a thing related with the OS, not the programming language.
 
 `node dir/app` behaves different than `cd dir && node app`.
 
@@ -50,7 +50,7 @@ if (fs.existsSync ("settings.json")){
 }
 ```
 
-In order to fix this issue simply require the `rwd`. I recommend to put the require in the very first line of your main script:
+This can be easily fixed changing the cwd at runtime, but it's discouraged. The best way to ensure that the application is started correctly, simply require the `rwd`. I recommend to put the require in the very first line of your main script:
 
 ```javascript
 //app.js
@@ -69,6 +69,8 @@ Better alternatives:
   $ cd dir && node app.js
   $ node <absolute_path>/dir/app.js
 ```
+
+This way, you don't need to prefix the paths with `__dirname`.
 
 #### Installation ####
 
