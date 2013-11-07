@@ -82,7 +82,7 @@ npm install rwd
 
 #### Alternatives ####
 
-If you prefer the ugly and archaic `__dirname` approach rather than warn and terminate the process, you don't need to install any module. For your convenience you can create a global variable similar to `__dirname` which can be used safely from any module (`__dirname` is local to the file). For example, you can run this snippet in the main file:
+For your convenience you can create a global variable similar to `__dirname` which can be used safely from any module (`__dirname` is local to the file). For example, you can run this snippet in the main file:
 
 ```javascript
 var path = require ("path");
