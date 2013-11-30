@@ -5,7 +5,8 @@ _Node.js project_
 
 #### Warns if the process has been started with the wrong cwd ####
 
-Version: 0.2.0
+[![NPM version](https://badge.fury.io/js/rwd.png)](http://badge.fury.io/js/rwd "Fury Version Badge")
+[![Dependency Status](https://david-dm.org/gagle/node-rwd.png)](https://david-dm.org/gagle/node-rwd "David Dependency Manager Badge")
 
 _rwd_ means real working directory.  
 Global modules don't need the `rwd` module.
