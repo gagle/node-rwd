@@ -9,7 +9,7 @@
 		"node": ">=0.10"
 	},
 	"dependencies": {
-		"is-global": "*"
+		"is-global": "0.1.x"
 	},
 	"license": "MIT",
 	"main": "lib"
