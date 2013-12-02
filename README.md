@@ -1,12 +1,12 @@
 rwd
 ===
 
-_Node.js project_
-
 #### Warns if the process has been started with the wrong cwd ####
 
 [![NPM version](https://badge.fury.io/js/rwd.png)](http://badge.fury.io/js/rwd "Fury Version Badge")
 [![Dependency Status](https://david-dm.org/gagle/node-rwd.png)](https://david-dm.org/gagle/node-rwd "David Dependency Manager Badge")
+
+[![NPM installation](https://nodei.co/npm/rwd.png?mini=true)](https://nodei.co/npm/rwd "NodeICO Badge")
 
 _rwd_ means real working directory.  
 Global modules don't need the `rwd` module.
@@ -74,12 +74,6 @@ Better alternatives:
 ```
 
 This way, you don't need to prefix the paths with `__dirname` because if the process doesn't finish this means that the cwd is the same as the directory of the main file.
-
-#### Installation ####
-
-```
-npm install rwd
-```
 
 #### Alternatives ####
 
