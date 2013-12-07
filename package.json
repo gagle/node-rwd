@@ -1,16 +1,16 @@
 {
-	"name": "rwd",
-	"version": "0.2.0",
-	"description": "Warns if the process has been started with the wrong cwd",
-	"keywords": ["cwd", "relative", "path"],
-	"author": "Gabriel Llamas <gagle@outlook.com>",
-	"repository": "git://github.com/gagle/node-rwd.git",
-	"engines": {
-		"node": ">=0.10"
-	},
-	"dependencies": {
-		"is-global": "0.1.x"
-	},
-	"license": "MIT",
-	"main": "lib"
+  "name": "rwd",
+  "version": "0.2.0",
+  "description": "Warns if the process has been started with the wrong cwd",
+  "keywords": ["cwd", "relative", "path"],
+  "author": "Gabriel Llamas <gagle@outlook.com>",
+  "repository": "git://github.com/gagle/node-rwd.git",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "is-global": "0.1.x"
+  },
+  "license": "MIT",
+  "main": "lib"
 }

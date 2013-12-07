@@ -1,10 +1,10 @@
 v0.2.0 (12 Oct 2013)
-	Instead of changing the cwd it shows a message and exits the process.
+  Instead of changing the cwd it shows a message and exits the process.
 
 v0.1.0 (24 Aug 2013)
-	The module must execute the returned function to fix the cwd.
-	An object can be passed with an "error" property to throw an error instead of
-		changing the cwd.
+  The module must execute the returned function to fix the cwd.
+  An object can be passed with an "error" property to throw an error instead of
+    changing the cwd.
 
 v0.0.1 (20 Jul 2013)
-	First release.
+  First release.
